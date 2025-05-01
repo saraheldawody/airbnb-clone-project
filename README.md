@@ -17,7 +17,7 @@ The goal is to build a strong backend system that supports:
 
 ---
 
-## 🛠 Features (Plan)
+## 🛠 Project Features (Plan)
 
 ### 1. API Docs
 - Uses **OpenAPI** to document all endpoints.
@@ -72,6 +72,99 @@ The goal is to build a strong backend system that supports:
 
 ---
 
+---
+
+## 🗄️ Database Design
+
+This project needs a good database design to keep track of users, properties, bookings, reviews, and payments. Below are the main entities, their key fields, and how they are connected.
+
+---
+
+### 🧑 Users
+
+Stores all users (guests and hosts).
+
+- `id`: Unique ID
+- `name`: Full name
+- `email`: Email address
+- `password`: Encrypted password
+- `is_host`: True if the user is a host
+
+🧩 **Relationships**:
+- A user **can create many properties** (if they are a host)
+- A user **can make many bookings**
+- A user **can write many reviews**
+
+---
+
+### 🏡 Properties
+
+Stores property listings.
+
+- `id`: Unique ID
+- `host_id`: User who owns the property
+- `title`: Name of the property
+- `description`: Description of the property
+- `location`: Address or city
+- `price_per_night`: Cost per night
+
+🧩 **Relationships**:
+- A property **belongs to one user** (host)
+- A property **can have many bookings**
+- A property **can have many reviews**
+
+---
+
+### 📅 Bookings
+
+Stores details of property bookings.
+
+- `id`: Unique ID
+- `user_id`: Who made the booking
+- `property_id`: Which property was booked
+- `start_date`: Check-in date
+- `end_date`: Check-out date
+- `status`: e.g., confirmed, cancelled
+
+🧩 **Relationships**:
+- A booking **belongs to one user**
+- A booking **belongs to one property**
+- A booking **has one payment**
+
+---
+
+### 💳 Payments
+
+Stores payment info for bookings.
+
+- `id`: Unique ID
+- `booking_id`: Related booking
+- `amount`: Amount paid
+- `payment_date`: When it was paid
+- `status`: e.g., completed, pending
+
+🧩 **Relationships**:
+- A payment **belongs to one booking**
+
+---
+
+### ⭐ Reviews
+
+Stores user reviews for properties.
+
+- `id`: Unique ID
+- `user_id`: Who wrote the review
+- `property_id`: Which property the review is for
+- `rating`: Number between 1–5
+- `comment`: Written feedback
+
+🧩 **Relationships**:
+- A review **belongs to one user**
+- A review **belongs to one property**
+
+---
+
+
 ## 📌 API Endpoints Plan
 
 ### 🧑 Users
@@ -116,6 +209,7 @@ cd airbnb-clone-backend
 
 
 ---
+
 
 ## 🔁 CI/CD Pipeline
 
