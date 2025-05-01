@@ -113,3 +113,32 @@ cd airbnb-clone-backend
 # Set up your virtual environment, install dependencies, and run the app
 # (We'll update this section when implementation starts)
 ```
+
+
+---
+
+## 🔁 CI/CD Pipeline
+
+### What is CI/CD?
+
+CI/CD stands for **Continuous Integration** and **Continuous Deployment**. It means that whenever we make changes to the code, the system will automatically:
+
+1. **Test the code** to check if it works correctly.
+2. **Build the app** (like putting all the pieces together).
+3. **Deploy the app** to a server if everything is okay.
+
+This helps us **catch bugs early**, **save time**, and **deliver updates faster**.
+
+### Why CI/CD is important
+
+- 🚀 Automates testing and deployment
+- 🛡️ Makes the app more stable and reliable
+- 🧪 Helps catch errors before going live
+- 🔄 Speeds up updates and improvements
+
+### Tools We Might Use
+
+- **GitHub Actions** – For automation workflows (testing, deployment)
+- **Docker** – For consistent environments
+- **Docker Hub** – For storing Docker images
+- **Heroku**, **Render**, or **AWS EC2** – For hosting the app
