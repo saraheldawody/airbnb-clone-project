@@ -194,19 +194,58 @@ POST /payments/
 GET /reviews/ POST /reviews/ GET /reviews/{review_id}/ PUT /reviews/{review_id}/ DELETE /reviews/{review_id}/
 ```
 
-## 🚧 Setup Instructions (coming soon)
+---
 
-```bash
-# Clone the project
-git clone https://github.com/your-username/airbnb-clone-backend.git
+## 🔐 API Security
 
-# Move into the project folder
-cd airbnb-clone-backend
+Security is very important for this project. The backend will include several features to protect user data, bookings, and payments.
 
-# Set up your virtual environment, install dependencies, and run the app
-# (We'll update this section when implementation starts)
-```
+---
 
+### 🔑 Authentication
+
+- We will use **Token-based authentication** (like JWT) to make sure only logged-in users can use protected features.
+- Users will get a token after they log in. They must send this token with each request.
+
+🔒 **Why it matters**: Protects user accounts and personal information from strangers.
+
+---
+
+### 👮 Authorization
+
+- We will add rules to make sure users can only do actions they are allowed to do.
+- For example:
+  - A guest cannot delete another user’s booking.
+  - Only the host who owns a property can edit or delete it.
+
+🔒 **Why it matters**: Stops users from accessing or changing other users’ data.
+
+---
+
+### 🚦 Rate Limiting
+
+- We will add limits to how many times a user can call an API in a short time.
+- This protects the server from abuse or spam.
+
+🔒 **Why it matters**: Keeps the site running smoothly and prevents attacks.
+
+---
+
+### 🔐 Secure Payments
+
+- We will connect with trusted payment services (like Stripe).
+- We will **never store sensitive credit card information** in our system.
+
+🔒 **Why it matters**: Protects users from fraud and keeps payment data safe.
+
+---
+
+### 🧼 Input Validation & Data Sanitization
+
+- We will validate all user inputs and remove any harmful code (like scripts).
+- This helps protect against attacks like SQL Injection or XSS.
+
+🔒 **Why it matters**: Prevents hackers from sending harmful data to the system.
 
 ---
 
@@ -236,3 +275,21 @@ This helps us **catch bugs early**, **save time**, and **deliver updates faster*
 - **Docker** – For consistent environments
 - **Docker Hub** – For storing Docker images
 - **Heroku**, **Render**, or **AWS EC2** – For hosting the app
+
+---
+
+## 🚧 Setup Instructions (coming soon)
+
+```bash
+# Clone the project
+git clone https://github.com/your-username/airbnb-clone-backend.git
+
+# Move into the project folder
+cd airbnb-clone-backend
+
+# Set up your virtual environment, install dependencies, and run the app
+# (We'll update this section when implementation starts)
+```
+
+
+---
