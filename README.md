@@ -17,7 +17,7 @@ The goal is to build a strong backend system that supports:
 
 ---
 
-## 🛠 Features Breakdown
+## 🛠 Feature Breakdown
 
 ### 1. API Docs
 - Uses **OpenAPI** to document all endpoints.
