@@ -17,7 +17,7 @@ The goal is to build a strong backend system that supports:
 
 ---
 
-## 🛠 Project Features (Plan)
+## 🛠 Features Breakdown
 
 ### 1. API Docs
 - Uses **OpenAPI** to document all endpoints.
@@ -50,7 +50,7 @@ The goal is to build a strong backend system that supports:
 
 ---
 
-## ⚙️ Tech Stack
+## ⚙️ Technology Stack
 
 - **Django** – Main web framework
 - **Django REST Framework** – For REST APIs
